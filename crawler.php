@@ -27,9 +27,9 @@ function scrapWebsite($link){
 }
 
 
-print_r(scrape_email('https://philanthropie.wordpress.com/repertoire-osbl-au-quebec/'));
+print_r(scrape_email('https://www.agenceswebduquebec.com/agence/816-tractr-apps-chatbots'));
 echo"<br><br><br><br><br>";
-var_dump(scrape_phone('https://philanthropie.wordpress.com/repertoire-osbl-au-quebec/'));
+//var_dump(scrape_phone('https://philanthropie.wordpress.com/repertoire-osbl-au-quebec/'));
 
 
 function scrape_email($url)
@@ -51,7 +51,7 @@ function scrape_email($url)
     $result = preg_replace('#[(\\[\\<]?AT[)\\]\\>]?\\s*(\\w*)\\s*[(\\[\\<]?DOT[)\\]\\>]?\\s*[a-z]{3}#ms', '@$1.com', $result);
 
     // Email matches
-    preg_match_all('#\\b([\\w\\._]*)[\\s(]*@[\\s)]*([\\w_\\-]{3,})\\s*\\.\\s*([a-z]{3})\\b#msi', $result, $matches);
+    preg_match_all('\'`\<a([^>]+)href\=\"mailto\:([^">]+)\"([^>]*)\>(.*?)\<\/a\>`ism\'', $result, $matches);
 
 
 
