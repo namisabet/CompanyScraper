@@ -154,9 +154,15 @@ foreach($links as $cie){
 
     //automatically goes to the next link
      $link='https://www.agenceswebduquebec.com'.$cie.'';
-     
+     echo "<p>$link</p>";
 
 
+     echo"<script>
+//            var doc=document.querySelectorAll('a[href=".$link."]');
+//            var email=doc.getElementById('contact').children[1].innerText;
+//            console.log(email);
+            window.open('$link');
+           </script>";
      //get the content of each link
     $xPath=getDocument($link);
     $_SESSION["link"]=$link;
@@ -208,12 +214,12 @@ foreach($links as $cie){
 foreach($cieInfos as $cie){
 
             foreach($cie as $key=>$res){
-                  var_dump($res["email"]);
+                  //var_dump($res["email"]);
                // displays the data fetched from agencewebquebec
 //                echo "NAME:".$key."<br> DESC: ".$res["Description"]." <br> BUDGET: ".$res["Budget"]." "." <br> CITY:  ".
 //                    $res["Ville"]."  <br>EXPERTISE: ".$res["Expertise"].".".$res["email"] . $res["link"].".".$res["Photos"].".
 //                    <br>__________________________________<br>";
-               insertRecords($key,$res["Ville"],$res["Description"],$res["Budget"],$res["Expertise"],$res["Photos"],$res["link"],$res["email"]);
+              // insertRecords($key,$res["Ville"],$res["Description"],$res["Budget"],$res["Expertise"],$res["Photos"],$res["link"],$res["email"]);
             }
 
 
