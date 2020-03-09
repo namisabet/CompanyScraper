@@ -96,8 +96,8 @@ function getDocument($link){
 
 
 //get the links of the different companies
-$i=1;
-while($i<2){
+$i=2;
+while($i<7){
 
     $xPath=getDocument('https://www.agenceswebduquebec.com/agencies?page='.$i.'');
     if($xPath!=null){
@@ -219,7 +219,7 @@ foreach($cieInfos as $cie){
 //                echo "NAME:".$key."<br> DESC: ".$res["Description"]." <br> BUDGET: ".$res["Budget"]." "." <br> CITY:  ".
 //                    $res["Ville"]."  <br>EXPERTISE: ".$res["Expertise"].".".$res["email"] . $res["link"].".".$res["Photos"].".
 //                    <br>__________________________________<br>";
-              // insertRecords($key,$res["Ville"],$res["Description"],$res["Budget"],$res["Expertise"],$res["Photos"],$res["link"],$res["email"]);
+              insertRecords($key,$res["Ville"],$res["Description"],$res["Budget"],$res["Expertise"],$res["Photos"],$res["link"],$res["email"]);
             }
 
 
