@@ -1,10 +1,22 @@
 <?php
-$url =
-    'https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-6-1.png';
 
-$img = 'logo.png';
 
-// Function to write image into file
-file_put_contents($img, file_get_contents($url));
+for($i=230;$i<240;$i++){
 
-echo "File downloaded!";
+    $url="photos";
+
+
+
+    $url =
+        'https://s3.amazonaws.com/awq-production/portfolio-images/3964/large.jpg?1539101751';
+
+    $img = $i.'logo1.png';
+
+
+    file_put_contents($img, file_get_contents($url));
+
+
+
+
+}
+
