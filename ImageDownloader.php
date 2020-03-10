@@ -37,7 +37,8 @@ $res=$conn->query($selectImages) or die($conn->error);
             //$file_type=$_FILES[$file]['type'];
             $file_type="";
             $saveFormat=$splitImages[$i].".".$file_type;
-          file_put_contents($path,file_get_contents($saveFormat));
+            $name=basename($splitImages[$i]);
+            file_put_contents($path,file_get_contents($saveFormat));
 
 
         }

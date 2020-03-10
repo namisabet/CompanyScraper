@@ -9,8 +9,27 @@ function randomPassword() {
     }
     return implode($pass); //turn the array into a string
 }
-function createAccount($email){
-    $password=randomPassword();
+function createAccount(){
     $conn = new mysqli("localhost", "root", "","agencewebquebec");
-    $sqlInsert="Insert into users(email,password,Created_at)";
+    $sqlSelect="Select * from informations";
+    $res=$conn->query($sqlSelect) or die($conn->error);
+
+    while($rec=$res->fetch_array()){
+
+        $email=$rec['email'];
+        $email=$rec['email'];
+        $information_id=$rec['Id'];
+        $name=$rec['Titre'];
+        $pass=randomPassword();
+
+        $password=password_hash($pass,PASSWORD_DEFAULT);
+        $date=date("Y-m-d");
+
+        $sqlInsert="Insert into users(name,email,password,Created_at,InformationId) values('$email','$email','$password','$date','$information_id')";
+        $conn->query($sqlInsert)or die($conn->error);
+
+    }
+
 }
+
+createAccount();
