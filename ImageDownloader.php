@@ -21,12 +21,12 @@ if($res->num_rows>0){
             $half=((count($splitImages)-1)/2)+1;
             //Get avant dernier image, la dernière image est du garbage (Pour data du web crawler)
             $half1=count($splitImages)-2;
-            
+
 
 
         for($i=$half;$i<$half1;$i++){
 
-
+            //puts the ID of the company to which the image belongs to ID_IMAGENAME.PNG
             $img=$companyId."_image".".$i."."png";
 
             chdir("photos");
